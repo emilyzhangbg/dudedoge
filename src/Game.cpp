@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <iostream>
+#include <vector>
 
 Game::Game(const std::string &title, int width, int height)
 : title{title}, width{width}, height{height}
@@ -44,10 +45,8 @@ void Game::pollEvents()
 {
     SDL_Event event;
 
-    if (SDL_PollEvent(&event))
-    {
-        switch (event.type)
-        {
+    if (SDL_PollEvent(&event)) {
+        switch (event.type) {
         case SDL_QUIT:
             closed = true;
             break;
