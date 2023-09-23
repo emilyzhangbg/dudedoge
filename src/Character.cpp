@@ -61,8 +61,8 @@ void Character::pollEvents() {
 void Character::updatePosition() const {
     SDL_Rect rect;
 
-    rect.w = 15;
-    rect.h = 15;
+    rect.w = 25;
+    rect.h = 25;
     rect.x = x;
     rect.y = y;
 
