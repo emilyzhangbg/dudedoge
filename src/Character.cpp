@@ -13,27 +13,25 @@ void Character::move(int steps, int direction) {
     switch (direction) {
     // left
     case 0:
-        // if (x > (0 + 5))
-        x -= 5;
+        if (x > (0 + 5))
+            x -= 5;
         break;
     // right
     case 1:
-        // if (x < (1000 - 5))
-        x += 5;
+        if (x < (1000 - 5))
+            x += 5;
         break;
     // up
     case 2:
-        // if (y > (0 + 5))
-        y -= 5;
+        if (y > (0 + 5))
+            y -= 5;
         break;
     // down
     case 3:
-        // if (y < (800 - 5))
-        y += 5;
+        if (y < (800 - 5))
+            y += 5;
         break;
     }
-
-    std::cout << "(" << x << "," << y << ")" << std::endl;
 }
 
 void Character::pollEvents() {
@@ -42,7 +40,6 @@ void Character::pollEvents() {
     if (SDL_PollEvent(&event)) {
         switch (event.type) {
         case SDL_KEYDOWN:
-            std::cout << "keydown" << std::endl;
             switch (event.key.keysym.sym) {
             case SDLK_LEFT:
                 move(4, 0);

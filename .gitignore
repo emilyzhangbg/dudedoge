@@ -3,3 +3,4 @@ Makefile
 src/include
 src/lib
 SDL2.dll
+src/dudedoge.code-workspace
