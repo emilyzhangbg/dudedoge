@@ -14,6 +14,11 @@ int main (int argc, char *argv[]) {
     {
         player.pollEvents();
         game.pollEvents();
+
+        SDL_Surface * image = SDL_LoadBMP("image.bmp");
+        SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer.getHandle(), image);
+        SDL_RenderPresent(renderer.getHandle());
+
         renderer.clearWindow();
         player.updatePosition();
         renderer.present();

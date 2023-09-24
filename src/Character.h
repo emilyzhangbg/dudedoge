@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "Renderer.h"
 #include <SDL2/SDL.h>
 
@@ -11,9 +10,11 @@ class Character {
         void updatePosition() const;
         void pollEvents();
 
-    protected:
+        int getX() { return x; }
+        int getY() { return y; }
+
+    private:
         int x = 0;
         int y = 0;
-    
-    const Renderer& renderer;
+        const Renderer& renderer;
 };

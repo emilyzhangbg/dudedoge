@@ -4,10 +4,17 @@
 #include "Renderer.h"
 #include <SDL2/SDL.h>
 
-class Man: public Character {
+class Man {
     public:
-        Man(const Renderer& renderer);
+        Man(const Renderer& renderer, int difficulty, int x, int y);
+        int getAudacity();
+        void highAudacity();
+        void moveMan();
+        void updatePosition();
+
+    private:
+        int x;
+        int y;
         int audacity;
-        SDL_Rect collider;
-        void interact();
+        const Renderer& renderer;
 };

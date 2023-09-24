@@ -2,7 +2,7 @@
 
 #include <string>
 #include <SDL2/SDL.h>
-#include <vector>
+// #include "Men.h"
 
 class Game {
 public:
@@ -16,14 +16,8 @@ public:
 
     void pollEvents();
     bool isClosed();
+    // bool menCollision(Character mainCharacter, Men man);
     Handle getHandle() const;
-
-    std::vector<std::vector<int>> vect
-    {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
 
 private:
     std::string title;

@@ -32,5 +32,17 @@ Men::Men(const Renderer &renderer, int difficulty)
 }
 
 void Men::drawMen() {
-    for (int i = 0; i < size; ++i)
+    for (int i = 0; i < size; ++i) {
+        men[i].updatePosition();
+    }
 }
+
+void Men::moveMen() {
+    for (int i = 0; i < size; ++i) {
+        men[i].moveMan();
+    }
+}
+
+// std::vector<Man> Men::getMen() {
+//     return men;
+// }

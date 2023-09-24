@@ -9,6 +9,31 @@ Character::Character(const Renderer& renderer)
     updatePosition();
 }
 
+void Character::pollEvents() {
+    SDL_Event event;
+
+    if (SDL_PollEvent(&event)) {
+        switch (event.type) {
+        case SDL_KEYDOWN:
+            std::cout << "keydown" << std::endl;
+            switch (event.key.keysym.sym) {
+            case SDLK_LEFT:
+                move(4, 0);
+                break;
+            case SDLK_RIGHT:
+                move(4, 1);
+                break;
+            case SDLK_UP:
+                move(4, 2);
+                break;
+            case SDLK_DOWN:
+                move(4, 3);
+                break;
+            }
+        }
+    }
+}
+
 void Character::move(int steps, int direction) {
     switch (direction) {
     // left
@@ -31,30 +56,6 @@ void Character::move(int steps, int direction) {
         if (y < (800 - 5))
             y += 5;
         break;
-    }
-}
-
-void Character::pollEvents() {
-    SDL_Event event;
-
-    if (SDL_PollEvent(&event)) {
-        switch (event.type) {
-        case SDL_KEYDOWN:
-            switch (event.key.keysym.sym) {
-            case SDLK_LEFT:
-                move(4, 0);
-                break;
-            case SDLK_RIGHT:
-                move(4, 1);
-                break;
-            case SDLK_UP:
-                move(4, 2);
-                break;
-            case SDLK_DOWN:
-                move(4, 3);
-                break;
-            }
-        }
     }
 }
 

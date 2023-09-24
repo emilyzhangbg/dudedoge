@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Men.h"
 #include <iostream>
 #include <vector>
 
@@ -54,6 +55,19 @@ void Game::pollEvents()
     }
 
 }
+
+// bool Game::menCollision(Character mainCharacter, Men npc)
+// {
+//     bool collision = false;
+
+//     for(int i=0; i < npc.getSize(); i++) {
+//         if(npc.men[i].getX() == mainCharacter.getX() || npc.men[i].getY() == mainCharacter.getY()) {
+//             collision = true;
+//             break;
+//     }
+//     }
+//     collision = false;
+// }
 
 Game::Handle Game::getHandle() const
 {
